@@ -25,18 +25,14 @@ var byString = function (object, fragmentName)
 var fragments = function (text)
 {
     'use strict';
-
     var mapping = {
-        button: element,
-        type: element,
-        fifa: element,
-        rank: element,
-        team: element,
-        totalPoints: element
-
-
+        button: element.bind(null, by.css('.btn')),
+        type: element.bind(null, by.css('code.ng-binding')),
+        fifa: element.bind(null, by.css('.table-responsive')),
+        rank: element.bind(null, by.css('td:nth-of-type(1)')),
+        team: element.bind(null, by.css('td:nth-of-type(2)')),
+        totalPoints: element.bind(null, by.css('td:nth-of-type(3)'))
     };
-
     return byString(mapping, text);
 };
 
